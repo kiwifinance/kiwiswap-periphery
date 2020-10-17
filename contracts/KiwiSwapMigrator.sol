@@ -6,7 +6,7 @@ import './interfaces/IKiwiSwapMigrator.sol';
 import './interfaces/V1/IUniswapV1Factory.sol';
 import './interfaces/V1/IUniswapV1Exchange.sol';
 import './interfaces/IKiwiSwapRouter01.sol';
-import './interfaces/IBEP20.sol';
+import './interfaces/IERC20.sol';
 
 contract KiwiSwapMigrator is IKiwiSwapMigrator {
     IUniswapV1Factory immutable factoryV1;

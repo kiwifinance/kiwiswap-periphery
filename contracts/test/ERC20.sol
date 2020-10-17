@@ -2,7 +2,7 @@ pragma solidity =0.6.6;
 
 import '../libraries/SafeMath.sol';
 
-contract BEP20 {
+contract ERC20 {
     using SafeMath for uint;
 
     string public constant name = 'Test Token';

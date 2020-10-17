@@ -2,7 +2,7 @@ pragma solidity =0.6.6;
 
 import '../libraries/SafeMath.sol';
 
-contract DeflatingBEP20 {
+contract DeflatingERC20 {
     using SafeMath for uint;
 
     string public constant name = 'Deflating Test Token';

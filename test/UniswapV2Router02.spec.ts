@@ -8,7 +8,7 @@ import IKiwiSwapPair from '@kiwiswap/kiwiswap-core/build/IKiwiSwapPair.json'
 import { v2Fixture } from './shared/fixtures'
 import { expandTo18Decimals, getApprovalDigest, MINIMUM_LIQUIDITY } from './shared/utilities'
 
-import DeflatingBEP20 from '../build/DeflatingBEP20.json'
+import DeflatingERC20 from '../build/DeflatingERC20.json'
 import { ecsign } from 'ethereumjs-util'
 
 chai.use(solidity)
