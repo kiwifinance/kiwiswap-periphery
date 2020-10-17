@@ -170,10 +170,10 @@
     truffle-flattener "^1.4.4"
     truffle-hdwallet-provider "^1.0.17"
 
-"@kiwiswap/kiwiswap-lib@0.1.2":
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/@kiwiswap/kiwiswap-lib/-/kiwiswap-lib-0.1.2.tgz#7d3cd09fa20da7937a0c71a5b60ca76d2391387a"
-  integrity sha512-JAb6anmWPOlBd2sENRLQCtWo9zOGnZAFfT8ybmpyyRqJWvZ7aEJbvuwGfLHfKxeEr1E2QuE4ZJ73oD1JyhcZzA==
+"@kiwiswap/v2-lib@0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@kiwiswap/v2-lib/-/v2-lib-0.1.1.tgz#ce272faf33fc487717de03814d6e7427b8ea3287"
+  integrity sha512-gcpexDwjtpSoDXGJj/Z8O5/N9+PnIg6I5hOWc1iQR4u3LrZzVjUHPnj+efEVJu7Uz8+ka9p0AsIi10A1BcUaMQ==
 
 "@resolver-engine/core@^0.2.1":
   version "0.2.1"

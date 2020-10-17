@@ -96,7 +96,7 @@ contract KiwiSwapRouter is IKiwiSwapRouter02 {
         assert(IWETH(WETH).transfer(pair, amountETH));
         liquidity = IKiwiSwapPair(pair).mint(to);
         // refund dust eth, if any
-        if (msg.value > amountETH) TransferHelper.safeTransferETH(msg.sender, msg.value - amountETH);
+        if (msg.value > amountETH) TransferHelper.safeTransferBNB(msg.sender, msg.value - amountETH);
     }
 
     // **** REMOVE LIQUIDITY ****
@@ -136,7 +136,7 @@ contract KiwiSwapRouter is IKiwiSwapRouter02 {
         );
         TransferHelper.safeTransfer(token, to, amountToken);
         IWETH(WETH).withdraw(amountETH);
-        TransferHelper.safeTransferETH(to, amountETH);
+        TransferHelper.safeTransferBNB(to, amountETH);
     }
     function removeLiquidityWithPermit(
         address tokenA,
@@ -188,7 +188,7 @@ contract KiwiSwapRouter is IKiwiSwapRouter02 {
         );
         TransferHelper.safeTransfer(token, to, IERC20(token).balanceOf(address(this)));
         IWETH(WETH).withdraw(amountETH);
-        TransferHelper.safeTransferETH(to, amountETH);
+        TransferHelper.safeTransferBNB(to, amountETH);
     }
     function removeLiquidityETHWithPermitSupportingFeeOnTransferTokens(
         address token,
@@ -279,7 +279,7 @@ contract KiwiSwapRouter is IKiwiSwapRouter02 {
         );
         _swap(amounts, path, address(this));
         IWETH(WETH).withdraw(amounts[amounts.length - 1]);
-        TransferHelper.safeTransferETH(to, amounts[amounts.length - 1]);
+        TransferHelper.safeTransferBNB(to, amounts[amounts.length - 1]);
     }
     function swapExactTokensForETH(uint amountIn, uint amountOutMin, address[] calldata path, address to, uint deadline)
         external
@@ -296,7 +296,7 @@ contract KiwiSwapRouter is IKiwiSwapRouter02 {
         );
         _swap(amounts, path, address(this));
         IWETH(WETH).withdraw(amounts[amounts.length - 1]);
-        TransferHelper.safeTransferETH(to, amounts[amounts.length - 1]);
+        TransferHelper.safeTransferBNB(to, amounts[amounts.length - 1]);
     }
     function swapETHForExactTokens(uint amountOut, address[] calldata path, address to, uint deadline)
         external
@@ -313,7 +313,7 @@ contract KiwiSwapRouter is IKiwiSwapRouter02 {
         assert(IWETH(WETH).transfer(KiwiSwapLibrary.pairFor(factory, path[0], path[1]), amounts[0]));
         _swap(amounts, path, to);
         // refund dust eth, if any
-        if (msg.value > amounts[0]) TransferHelper.safeTransferETH(msg.sender, msg.value - amounts[0]);
+        if (msg.value > amounts[0]) TransferHelper.safeTransferBNB(msg.sender, msg.value - amounts[0]);
     }
 
     // **** SWAP (supporting fee-on-transfer tokens) ****
@@ -396,7 +396,7 @@ contract KiwiSwapRouter is IKiwiSwapRouter02 {
         uint amountOut = IERC20(WETH).balanceOf(address(this));
         require(amountOut >= amountOutMin, 'KiwiSwapRouter: INSUFFICIENT_OUTPUT_AMOUNT');
         IWETH(WETH).withdraw(amountOut);
-        TransferHelper.safeTransferETH(to, amountOut);
+        TransferHelper.safeTransferBNB(to, amountOut);
     }
 
     // **** LIBRARY FUNCTIONS ****
