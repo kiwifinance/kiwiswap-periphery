@@ -1,0 +1,21 @@
+{
+  "abi": [],
+  "evm": {
+    "bytecode": {
+      "linkReferences": {},
+      "object": "60566023600b82828239805160001a607314601657fe5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea2646970667358221220645a90e561ce7e664ca7a1f7b000c49a2237257a700e4868e3d158c7e11c9da064736f6c63430006060033",
+      "opcodes": "PUSH1 0x56 PUSH1 0x23 PUSH1 0xB DUP3 DUP3 DUP3 CODECOPY DUP1 MLOAD PUSH1 0x0 BYTE PUSH1 0x73 EQ PUSH1 0x16 JUMPI INVALID JUMPDEST ADDRESS PUSH1 0x0 MSTORE PUSH1 0x73 DUP2 MSTORE8 DUP3 DUP2 RETURN INVALID PUSH20 0x0 ADDRESS EQ PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x0 DUP1 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 PUSH5 0x5A90E561CE PUSH31 0x664CA7A1F7B000C49A2237257A700E4868E3D158C7E11C9DA064736F6C6343 STOP MOD MOD STOP CALLER ",
+      "sourceMap": "254:1440:22:-:0;;132:2:-1;166:7;155:9;146:7;137:37;255:7;249:14;246:1;241:23;235:4;232:33;222:2;;269:9;222:2;293:9;290:1;283:20;323:4;314:7;306:22;347:7;338;331:24"
+    },
+    "deployedBytecode": {
+      "immutableReferences": {},
+      "linkReferences": {},
+      "object": "73000000000000000000000000000000000000000030146080604052600080fdfea2646970667358221220645a90e561ce7e664ca7a1f7b000c49a2237257a700e4868e3d158c7e11c9da064736f6c63430006060033",
+      "opcodes": "PUSH20 0x0 ADDRESS EQ PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x0 DUP1 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 PUSH5 0x5A90E561CE PUSH31 0x664CA7A1F7B000C49A2237257A700E4868E3D158C7E11C9DA064736F6C6343 STOP MOD MOD STOP CALLER ",
+      "sourceMap": "254:1440:22:-:0;;;;;;12:1:-1;9;2:12"
+    }
+  },
+  "metadata": "{\"compiler\":{\"version\":\"0.6.6+commit.6c089d02\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"contracts/libraries/KiwiSwapOracleLibrary.sol\":\"KiwiSwapOracleLibrary\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":999999},\"remappings\":[]},\"sources\":{\"@kiwiswap/kiwiswap-core/contracts/interfaces/IKiwiSwapPair.sol\":{\"keccak256\":\"0x9f6cf7f9afa1087e57ba5b9236ebcebee43c62dac3cec13cf218ca5cdc871b91\",\"urls\":[\"bzz-raw://4748edad174abadd3b1f62e9ecdfc08351e90eb023d8c91457da44ff6714e84a\",\"dweb:/ipfs/QmQ5BUcB6u95X2H71zHzFt5JVToJea7vf4utARxazuqBks\"]},\"@kiwiswap/v2-lib/contracts/libraries/Babylonian.sol\":{\"keccak256\":\"0x2799682d733a6ef3aae1dce7dbe2cff5513f0244e4abd07338fe7a45c8fd9733\",\"urls\":[\"bzz-raw://332968199300fe6025b9ad8f3d69f252ec2a3a092fa42a0ef7f2d1397f59a7e5\",\"dweb:/ipfs/Qme4wBzDwfHr7zHk8WrCwCpozpt4KHuDQSxfJTDoHL8Pdi\"]},\"@kiwiswap/v2-lib/contracts/libraries/FixedPoint.sol\":{\"keccak256\":\"0x3e3b42ee2b70f69db4b8627ab9aa51152a45e1d2602bcbba73b4e9161e65fcf9\",\"urls\":[\"bzz-raw://e4ca021aaf3bc8b5cee5d40ba51da1389960e385f4a00caf8547a11a67a48754\",\"dweb:/ipfs/QmayZw9rWK5cG7jC6wJgyuJZps54CHrGwYZ3QozN1izcr9\"]},\"contracts/libraries/KiwiSwapOracleLibrary.sol\":{\"keccak256\":\"0x8fae8a0b60c662880bd2c429e44550931756894e57ef31f9c3fe6a9e723839eb\",\"urls\":[\"bzz-raw://13c836dd51d921d320c210870d310363858d39cc642699bb7bd5d22b9440b6f9\",\"dweb:/ipfs/Qmc8yKeacKRYtHQtZ3h6MB9858kmdatMfX88G9BaCv4riw\"]}},\"version\":1}",
+  "interface": [],
+  "bytecode": "60566023600b82828239805160001a607314601657fe5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea2646970667358221220645a90e561ce7e664ca7a1f7b000c49a2237257a700e4868e3d158c7e11c9da064736f6c63430006060033"
+}
