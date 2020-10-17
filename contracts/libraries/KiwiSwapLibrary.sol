@@ -1,6 +1,6 @@
 pragma solidity >=0.5.0;
 
-import '@uniswap/v2-core/contracts/interfaces/IKiwiSwapPair.sol';
+import '@kiwiswap/kiwiswap-core/contracts/interfaces/IKiwiSwapPair.sol';
 
 import "./SafeMath.sol";
 
