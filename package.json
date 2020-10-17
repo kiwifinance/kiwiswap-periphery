@@ -15,8 +15,8 @@
     "contracts"
   ],
   "dependencies": {
-    "@kiwiswap/kiwiswap-lib": "0.0.1",
     "@kiwiswap/kiwiswap-core": "0.1.1",
+    "@kiwiswap/kiwiswap-lib": "0.0.1",
     "truffle-hdwallet-provider": "^1.0.17",
     "truffle-plugin-verify": "^0.4.0"
   },
@@ -42,6 +42,7 @@
     "precompile": "yarn clean",
     "compile": "waffle .waffle.json",
     "postcompile": "yarn copy-v1-artifacts",
+    "pack": "npm pack",
     "pretest": "yarn compile",
     "test": "mocha",
     "prepublishOnly": "yarn test"
