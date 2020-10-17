@@ -3,12 +3,12 @@ import { solidity, MockProvider, createFixtureLoader, deployContract } from 'eth
 import { Contract } from 'ethers'
 import { BigNumber, bigNumberify } from 'ethers/utils'
 import { MaxUint256 } from 'ethers/constants'
-import IUniswapV2Pair from '@kiwiswap/kiwiswap-core/build/IKiwiSwapPair.json'
+import IKiwiSwapPair from '@kiwiswap/kiwiswap-core/build/IKiwiSwapPair.json'
 
 import { v2Fixture } from './shared/fixtures'
 import { expandTo18Decimals, getApprovalDigest, MINIMUM_LIQUIDITY } from './shared/utilities'
 
-import DeflatingERC20 from '../build/DeflatingERC20.json'
+import DeflatingBEP20 from '../build/DeflatingBEP20.json'
 import { ecsign } from 'ethereumjs-util'
 
 chai.use(solidity)
@@ -17,7 +17,7 @@ const overrides = {
   gasLimit: 9999999
 }
 
-describe('UniswapV2Router02', () => {
+describe('KiwiSwapRouter', () => {
   const provider = new MockProvider({
     hardfork: 'istanbul',
     mnemonic: 'horn horn horn horn horn horn horn horn horn horn horn horn',
@@ -62,7 +62,7 @@ describe('UniswapV2Router02', () => {
     )
 
     await expect(router.getAmountsOut(bigNumberify(2), [token0.address])).to.be.revertedWith(
-      'UniswapV2Library: INVALID_PATH'
+      'KiwiSwapLibrary: INVALID_PATH'
     )
     const path = [token0.address, token1.address]
     expect(await router.getAmountsOut(bigNumberify(2), path)).to.deep.eq([bigNumberify(2), bigNumberify(1)])

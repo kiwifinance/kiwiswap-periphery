@@ -7,13 +7,13 @@ import { expandTo18Decimals } from './utilities'
 import KiwiSwapFactory from '@kiwiswap/kiwiswap-core/build/KiwiSwapFactory.json'
 import IKiwiSwapPair from '@kiwiswap/kiwiswap-core/build/IKiwiSwapPair.json'
 
-import ERC20 from '../../build/ERC20.json'
+import BEP20 from '../../build/BEP20.json'
 import WETH9 from '../../build/WETH9.json'
 import UniswapV1Exchange from '../../build/UniswapV1Exchange.json'
 import UniswapV1Factory from '../../build/UniswapV1Factory.json'
 import KiwiSwapRouter01 from '../../build/KiwiSwapRouter01.json'
 import KiwiSwapMigrator from '../../build/KiwiSwapMigrator.json'
-import KiwiSwapRouter02 from '../../build/KiwiSwapRouter02.json'
+import KiwiSwapRouter from '../../build/KiwiSwapRouter.json'
 import RouterEventEmitter from '../../build/RouterEventEmitter.json'
 
 const overrides = {
@@ -39,10 +39,10 @@ interface V2Fixture {
 
 export async function v2Fixture(provider: Web3Provider, [wallet]: Wallet[]): Promise<V2Fixture> {
   // deploy tokens
-  const tokenA = await deployContract(wallet, ERC20, [expandTo18Decimals(10000)])
-  const tokenB = await deployContract(wallet, ERC20, [expandTo18Decimals(10000)])
+  const tokenA = await deployContract(wallet, BEP20, [expandTo18Decimals(10000)])
+  const tokenB = await deployContract(wallet, BEP20, [expandTo18Decimals(10000)])
   const WETH = await deployContract(wallet, WETH9)
-  const WETHPartner = await deployContract(wallet, ERC20, [expandTo18Decimals(10000)])
+  const WETHPartner = await deployContract(wallet, BEP20, [expandTo18Decimals(10000)])
 
   // deploy V1
   const factoryV1 = await deployContract(wallet, UniswapV1Factory, [])
@@ -53,7 +53,7 @@ export async function v2Fixture(provider: Web3Provider, [wallet]: Wallet[]): Pro
 
   // deploy routers
   const router01 = await deployContract(wallet, KiwiSwapRouter01, [factoryV2.address, WETH.address], overrides)
-  const router02 = await deployContract(wallet, KiwiSwapRouter02, [factoryV2.address, WETH.address], overrides)
+  const router02 = await deployContract(wallet, KiwiSwapRouter, [factoryV2.address, WETH.address], overrides)
 
   // event emitter for testing
   const routerEventEmitter = await deployContract(wallet, RouterEventEmitter, [])

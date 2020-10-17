@@ -6,7 +6,7 @@ import '../libraries/KiwiSwapLibrary.sol';
 import '../interfaces/V1/IUniswapV1Factory.sol';
 import '../interfaces/V1/IUniswapV1Exchange.sol';
 import '../interfaces/IKiwiSwapRouter01.sol';
-import '../interfaces/IERC20.sol';
+import '../interfaces/IBEP20.sol';
 import '../interfaces/IWETH.sol';
 
 contract ExampleFlashSwap is IKiwiSwapCallee {
@@ -41,7 +41,7 @@ contract ExampleFlashSwap is IKiwiSwapCallee {
         }
 
         assert(path[0] == address(WETH) || path[1] == address(WETH)); // this strategy only works with a V2 WETH pair
-        IERC20 token = IERC20(path[0] == address(WETH) ? path[1] : path[0]);
+        IBEP20 token = IBEP20(path[0] == address(WETH) ? path[1] : path[0]);
         IUniswapV1Exchange exchangeV1 = IUniswapV1Exchange(factoryV1.getExchange(address(token))); // get V1 exchange
 
         if (amountToken > 0) {

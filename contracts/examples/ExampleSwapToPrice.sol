@@ -4,7 +4,7 @@ import '@kiwiswap/kiwiswap-core/contracts/interfaces/IKiwiSwapPair.sol';
 import '@kiwiswap/v2-lib/contracts/libraries/Babylonian.sol';
 import '@kiwiswap/v2-lib/contracts/libraries/TransferHelper.sol';
 
-import '../interfaces/IERC20.sol';
+import '../interfaces/IBEP20.sol';
 import '../interfaces/IKiwiSwapRouter01.sol';
 import '../libraries/SafeMath.sol';
 import '../libraries/KiwiSwapLibrary.sol';

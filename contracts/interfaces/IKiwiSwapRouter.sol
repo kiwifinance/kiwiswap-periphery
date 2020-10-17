@@ -2,7 +2,7 @@ pragma solidity >=0.6.2;
 
 import './IKiwiSwapRouter01.sol';
 
-interface IKiwiSwapRouter02 is IKiwiSwapRouter01 {
+interface IKiwiSwapRouter is IKiwiSwapRouter01 {
     function removeLiquidityETHSupportingFeeOnTransferTokens(
         address token,
         uint liquidity,

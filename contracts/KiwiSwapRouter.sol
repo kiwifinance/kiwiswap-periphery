@@ -3,13 +3,13 @@ pragma solidity =0.6.6;
 import '@kiwiswap/kiwiswap-core/contracts/interfaces/IKiwiSwapFactory.sol';
 import '@kiwiswap/v2-lib/contracts/libraries/TransferHelper.sol';
 
-import './interfaces/IKiwiSwapRouter02.sol';
+import './interfaces/IKiwiSwapRouter.sol';
 import './libraries/KiwiSwapLibrary.sol';
 import './libraries/SafeMath.sol';
-import './interfaces/IERC20.sol';
+import './interfaces/IBEP20.sol';
 import './interfaces/IWETH.sol';
 
-contract KiwiSwapRouter is IKiwiSwapRouter02 {
+contract KiwiSwapRouter is IKiwiSwapRouter {
     using SafeMath for uint;
 
     address public immutable override factory;
@@ -186,7 +186,7 @@ contract KiwiSwapRouter is IKiwiSwapRouter02 {
             address(this),
             deadline
         );
-        TransferHelper.safeTransfer(token, to, IERC20(token).balanceOf(address(this)));
+        TransferHelper.safeTransfer(token, to, IBEP20(token).balanceOf(address(this)));
         IWETH(WETH).withdraw(amountETH);
         TransferHelper.safeTransferBNB(to, amountETH);
     }
@@ -328,7 +328,7 @@ contract KiwiSwapRouter is IKiwiSwapRouter02 {
             { // scope to avoid stack too deep errors
             (uint reserve0, uint reserve1,) = pair.getReserves();
             (uint reserveInput, uint reserveOutput) = input == token0 ? (reserve0, reserve1) : (reserve1, reserve0);
-            amountInput = IERC20(input).balanceOf(address(pair)).sub(reserveInput);
+            amountInput = IBEP20(input).balanceOf(address(pair)).sub(reserveInput);
             amountOutput = KiwiSwapLibrary.getAmountOut(amountInput, reserveInput, reserveOutput);
             }
             (uint amount0Out, uint amount1Out) = input == token0 ? (uint(0), amountOutput) : (amountOutput, uint(0));
@@ -346,10 +346,10 @@ contract KiwiSwapRouter is IKiwiSwapRouter02 {
         TransferHelper.safeTransferFrom(
             path[0], msg.sender, KiwiSwapLibrary.pairFor(factory, path[0], path[1]), amountIn
         );
-        uint balanceBefore = IERC20(path[path.length - 1]).balanceOf(to);
+        uint balanceBefore = IBEP20(path[path.length - 1]).balanceOf(to);
         _swapSupportingFeeOnTransferTokens(path, to);
         require(
-            IERC20(path[path.length - 1]).balanceOf(to).sub(balanceBefore) >= amountOutMin,
+            IBEP20(path[path.length - 1]).balanceOf(to).sub(balanceBefore) >= amountOutMin,
             'KiwiSwapRouter: INSUFFICIENT_OUTPUT_AMOUNT'
         );
     }
@@ -369,10 +369,10 @@ contract KiwiSwapRouter is IKiwiSwapRouter02 {
         uint amountIn = msg.value;
         IWETH(WETH).deposit{value: amountIn}();
         assert(IWETH(WETH).transfer(KiwiSwapLibrary.pairFor(factory, path[0], path[1]), amountIn));
-        uint balanceBefore = IERC20(path[path.length - 1]).balanceOf(to);
+        uint balanceBefore = IBEP20(path[path.length - 1]).balanceOf(to);
         _swapSupportingFeeOnTransferTokens(path, to);
         require(
-            IERC20(path[path.length - 1]).balanceOf(to).sub(balanceBefore) >= amountOutMin,
+            IBEP20(path[path.length - 1]).balanceOf(to).sub(balanceBefore) >= amountOutMin,
             'KiwiSwapRouter: INSUFFICIENT_OUTPUT_AMOUNT'
         );
     }
@@ -393,7 +393,7 @@ contract KiwiSwapRouter is IKiwiSwapRouter02 {
             path[0], msg.sender, KiwiSwapLibrary.pairFor(factory, path[0], path[1]), amountIn
         );
         _swapSupportingFeeOnTransferTokens(path, address(this));
-        uint amountOut = IERC20(WETH).balanceOf(address(this));
+        uint amountOut = IBEP20(WETH).balanceOf(address(this));
         require(amountOut >= amountOutMin, 'KiwiSwapRouter: INSUFFICIENT_OUTPUT_AMOUNT');
         IWETH(WETH).withdraw(amountOut);
         TransferHelper.safeTransferBNB(to, amountOut);
