@@ -1,8 +1,7 @@
-pragma solidity >=0.5.0;
+pragma solidity >=0.6.6;
 
 import '@kiwiswap/kiwiswap-core/contracts/interfaces/IKiwiSwapPair.sol';
-
-import "./SafeMath.sol";
+import './SafeMath.sol';
 
 library KiwiSwapLibrary {
     using SafeMath for uint;
@@ -21,7 +20,7 @@ library KiwiSwapLibrary {
                 hex'ff',
                 factory,
                 keccak256(abi.encodePacked(token0, token1)),
-                hex'd0d4c4cd0848c93cb4fd1f498d7013ee6bfb25783ea21593d5834f5d250ece66' // init code hash
+                hex'1edce9c116cf81aa43c27184471b370ad8e00a946bbb55fa082b1a3ad3ca02f1' // init code hash
             ))));
     }
 

@@ -1,7 +1,7 @@
-pragma solidity >=0.5.0;
+pragma solidity >=0.6.6;
 
 import '@kiwiswap/kiwiswap-core/contracts/interfaces/IKiwiSwapPair.sol';
-import '@kiwiswap/kiwiswap-lib/contracts/utils/FixedPoint.sol';
+import '@kiwiswap/v2-lib/contracts/libraries/FixedPoint.sol';
 
 // library with helper methods for oracles that are concerned with computing average prices
 library KiwiSwapOracleLibrary {

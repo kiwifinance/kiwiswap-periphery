@@ -1,6 +1,6 @@
 pragma solidity =0.6.6;
 
-import '@uniswap/v2-core/contracts/interfaces/IKiwiSwapCallee.sol';
+import '@kiwiswap/kiwiswap-core/contracts/interfaces/IKiwiSwapCallee.sol';
 
 import '../libraries/KiwiSwapLibrary.sol';
 import '../interfaces/V1/IUniswapV1Factory.sol';

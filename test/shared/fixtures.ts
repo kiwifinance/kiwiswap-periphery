@@ -4,8 +4,8 @@ import { deployContract } from 'ethereum-waffle'
 
 import { expandTo18Decimals } from './utilities'
 
-import KiwiSwapFactory from '@uniswap/v2-core/build/KiwiSwapFactory.json'
-import IKiwiSwapPair from '@uniswap/v2-core/build/IKiwiSwapPair.json'
+import KiwiSwapFactory from '@kiwiswap/kiwiswap-core/build/KiwiSwapFactory.json'
+import IKiwiSwapPair from '@kiwiswap/kiwiswap-core/build/IKiwiSwapPair.json'
 
 import ERC20 from '../../build/ERC20.json'
 import WETH9 from '../../build/WETH9.json'

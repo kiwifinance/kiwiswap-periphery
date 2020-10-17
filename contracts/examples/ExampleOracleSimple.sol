@@ -1,8 +1,8 @@
-pragma solidity =0.6.6;
+pragma solidity >=0.6.6;
 
-import '@uniswap/v2-core/contracts/interfaces/IKiwiSwapFactory.sol';
-import '@uniswap/v2-core/contracts/interfaces/IKiwiSwapPair.sol';
-import '@uniswap/lib/contracts/libraries/FixedPoint.sol';
+import '@kiwiswap/kiwiswap-core/contracts/interfaces/IKiwiSwapFactory.sol';
+import '@kiwiswap/kiwiswap-core/contracts/interfaces/IKiwiSwapPair.sol';
+import '@kiwiswap/v2-lib/contracts/libraries/FixedPoint.sol';
 
 import '../libraries/KiwiSwapOracleLibrary.sol';
 import '../libraries/KiwiSwapLibrary.sol';

@@ -1,6 +1,6 @@
 pragma solidity =0.6.6;
 
-import '@kiwiswap/kiwiswap-lib/contracts/utils/TransferHelper.sol';
+import '@kiwiswap/v2-lib/contracts/libraries/TransferHelper.sol';
 
 import './interfaces/IKiwiSwapMigrator.sol';
 import './interfaces/V1/IUniswapV1Factory.sol';

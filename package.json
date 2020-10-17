@@ -1,6 +1,6 @@
 {
   "name": "@kiwiswap/kiwiswap-periphery",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "🎚 Peripheral smart contracts for interacting with kiwiswap",
   "engines": {
     "node": ">=10"
@@ -16,10 +16,8 @@
   ],
   "dependencies": {
     "@kiwiswap/kiwiswap-core": "0.1.1",
-    "@kiwiswap/kiwiswap-lib": "0.0.1",
-    "truffle-hdwallet-provider": "^1.0.17",
-    "truffle-plugin-verify": "^0.4.0"
-  },
+    "@kiwiswap/v2-lib": "0.1.1"
+    },
   "devDependencies": {
     "@types/chai": "^4.2.6",
     "@types/mocha": "^5.2.7",

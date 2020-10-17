@@ -1,8 +1,8 @@
 pragma solidity =0.6.6;
 
-import '@uniswap/v2-core/contracts/interfaces/IKiwiSwapPair.sol';
-import '@uniswap/lib/contracts/libraries/Babylonian.sol';
-import '@uniswap/lib/contracts/libraries/TransferHelper.sol';
+import '@kiwiswap/kiwiswap-core/contracts/interfaces/IKiwiSwapPair.sol';
+import '@kiwiswap/v2-lib/contracts/libraries/Babylonian.sol';
+import '@kiwiswap/v2-lib/contracts/libraries/TransferHelper.sol';
 
 import '../interfaces/IERC20.sol';
 import '../interfaces/IKiwiSwapRouter01.sol';
